@@ -17,34 +17,32 @@
         }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #E0F7FA; /* Açık turkuaz */
+            background-color: #E0F7FA;
         }
         h1, h2, h3, p, a {
             font-family: 'Montserrat', sans-serif;
         }
         nav {
-            background-color: #E0F7FA; /* Turkuaz */
+            background-color: #E0F7FA;
         }
         nav a {
-            color: #FF0000; /* Açık turkuaz */
+            color: #FF0000;
         }
         nav a:hover {
-            color: #FF0000; /* Koyu mavi */
+            color: #FF0000;
         }
         footer {
-            background-color: #FF0000; /* Koyu turkuaz */
+            background-color: #FF0000;
         }
     </style>
 </head>
 <body class="leading-normal tracking-normal">
     <nav class="text-white py-4">
         <div class="container mx-auto px-4 flex justify-center">
-            
+            <!-- Navigation content here -->
         </div>
     </nav>
     <div class="container mx-auto px-4 py-12">
-        
-        
         <header class="text-center mb-12">
             <div class="relative mb-8">
                 <img src="visuals/theme.webp" alt="Vodafone Park and Traffic">
@@ -59,47 +57,45 @@
             <div class="text-gray-700 space-y-4">
                 <p>This is a research to explore Beşiktaş, Fenerbahçe, and Galatasaray’s football matches’ effects on Istanbul traffic. The main goal is to analyze their daily, hourly and overall affect. We aim to discover key trends and attributes by analyzing time and day based traffic density data within a 50-square-kilometer area centered around each stadium. Our analysis will be conducted from 2 PM to 1 AM to observe match affects better by not getting too far away from their starting time. Ultimately, we hope to answer whether, as many believe, match days are causing significantly more traffic.</p>
             </div>
-            </div>
         </section>
-    
     </div>
-<section class="bg-white p-8 rounded-lg shadow-md animate-fade-in">
-    <h3 class="text-2xl font-semibold text-teal-700 mb-6">Descriptive Visuals</h3>
-    <div>
-        <img src="visuals/heatmap.png" alt="Traffic Density Heatmap">
-        <p>This heatmap provides a detailed look at hourly traffic density in Istanbul on both weekdays and weekends. While it is not a visual directly tied to match days, these findings serve as a foundation for our research, its insights are important for better understanding overall traffic picture. By observing how traffic density changes across different times and day types, this visual helps identifying the most jammed hours and provides a clear comparison between weekends and weekdays. Visual shows that:
-        <ul>
-            <li>Weekends have less traffic flow compared to weekdays.</li>
-            <li>Traffic densitys are observed to rise through the afternoon, then gradually decline after reaching their peak.</li>
-        </ul>
-        </p>
-    </div>
-    <div>
-        <img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
-<p>Visual above shows the differentiating behaviours focusing on the hours related to match times for each team. Its main purpose is to reveal anomalies on match days, not to compare overall traffic density. Following the match hours, there is a positive divergence in traffic density compared to non-match days.</p>
-        <p>Select a team to view its visualization:</p>
-        <select id="teamSelector">
-            <option value="">--Choose a team--</option>
-            <option value="Beşiktaş">Beşiktaş</option>
-            <option value="Fenerbahçe">Fenerbahçe</option>
-            <option value="Galatasaray">Galatasaray</option>
-        </select>
-        <script>
-            document.getElementById('teamSelector').addEventListener('change', function() {
-                var teamImage = document.getElementById('teamImage');
-                var selectedTeam = this.value;
-                if (selectedTeam === "Beşiktaş") {
-                    teamImage.src = "visuals/bjk_vis2.png";
-                } else if (selectedTeam === "Fenerbahçe") {
-                    teamImage.src = "visuals/fb_vis2.png";
-                } else if (selectedTeam === "Galatasaray") {
-                    teamImage.src = "visuals/gs_vis2.png";
-                } else {
-                    teamImage.src = "visuals/bjk_vis2.png";
-                }
-            });
-        </script>
-    </div>
-</section>
+    <section class="bg-white p-8 rounded-lg shadow-md animate-fade-in">
+        <h3 class="text-2xl font-semibold text-teal-700 mb-6">Descriptive Visuals</h3>
+        <div>
+            <img src="visuals/heatmap.png" alt="Traffic Density Heatmap">
+            <p>This heatmap provides a detailed look at hourly traffic density in Istanbul on both weekdays and weekends. While it is not a visual directly tied to match days, these findings serve as a foundation for our research, its insights are important for better understanding overall traffic picture. By observing how traffic density changes across different times and day types, this visual helps identifying the most jammed hours and provides a clear comparison between weekends and weekdays. Visual shows that:
+            <ul>
+                <li>Weekends have less traffic flow compared to weekdays.</li>
+                <li>Traffic densitys are observed to rise through the afternoon, then gradually decline after reaching their peak.</li>
+            </ul>
+            </p>
+        </div>
+        <div>
+            <img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
+            <p>Select a team to view its visualization:</p>
+            <select id="teamSelector">
+                <option value="">--Choose a team--</option>
+                <option value="Beşiktaş">Beşiktaş</option>
+                <option value="Fenerbahçe">Fenerbahçe</option>
+                <option value="Galatasaray">Galatasaray</option>
+            </select>
+            <p style="margin-top: 10px;">Visual above shows the differentiating behaviours focusing on the hours related to match times for each team. Its main purpose is to reveal anomalies on match days, not to compare overall traffic density. Following the match hours, there is a positive divergence in traffic density compared to non-match days.</p>
+            <script>
+                document.getElementById('teamSelector').addEventListener('change', function() {
+                    var teamImage = document.getElementById('teamImage');
+                    var selectedTeam = this.value;
+                    if (selectedTeam === "Beşiktaş") {
+                        teamImage.src = "visuals/bjk_vis2.png";
+                    } else if (selectedTeam === "Fenerbahçe") {
+                        teamImage.src = "visuals/fb_vis2.png";
+                    } else if (selectedTeam === "Galatasaray") {
+                        teamImage.src = "visuals/gs_vis2.png";
+                    } else {
+                        teamImage.src = "visuals/bjk_vis2.png";
+                    }
+                });
+            </script>
+        </div>
+    </section>
 </body>
 </html>
