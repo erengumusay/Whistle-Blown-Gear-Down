@@ -75,6 +75,7 @@
         </p>
     </div>
     <div>
+        <img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
         <p>Select a team to view its visualization:</p>
         <select id="teamSelector">
             <option value="">--Choose a team--</option>
@@ -82,9 +83,6 @@
             <option value="Fenerbahçe">Fenerbahçe</option>
             <option value="Galatasaray">Galatasaray</option>
         </select>
-        <div>
-            <img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
-        </div>
         <script>
             document.getElementById('teamSelector').addEventListener('change', function() {
                 var teamImage = document.getElementById('teamImage');
