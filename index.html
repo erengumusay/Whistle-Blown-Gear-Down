@@ -74,32 +74,21 @@
                 </ul>
                 </p>
             </div>
-        <img src="visuals/vis2.png" alt="Second Visual">
-<p>Placeholder text for explaining the second visual in detail and providing context.</p>
-<p>
-    Select a team to view its visualization:<br>
-    <select id="teamSelector">
-        <option value="">--Choose a team--</option>
-        <option value="Beşiktaş">Beşiktaş</option>
-        <option value="Fenerbahçe">Fenerbahçe</option>
-        <option value="Galatasaray">Galatasaray</option>
-    </select>
-</p>
-<img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
 <script>
-const selector = document.getElementById('teamSelector');
-const imgElement = document.getElementById('teamImage');
+    const selector = document.getElementById('teamSelector');
+    const imgElement = document.getElementById('teamImage');
 
-selector.addEventListener('change', () => {
-    const team = selector.value;
-    if (team === 'Beşiktaş') {
-        imgElement.src = 'visuals/bjk_vis2.png';
-    } else if (team === 'Fenerbahçe') {
-        imgElement.src = 'visuals/fb_vis2.png';
-    } else if (team === 'Galatasaray') {
-        imgElement.src = 'visuals/gs_vis2.png';
-    }
-});
+    selector.addEventListener('change', () => {
+        const team = selector.value;
+        if (team === 'Beşiktaş') {
+            imgElement.src = 'visuals/bjk_vis2.png';
+        } else if (team === 'Fenerbahçe') {
+            imgElement.src = 'visuals/fb_vis2.png';
+        } else if (team === 'Galatasaray') {
+            imgElement.src = 'visuals/gs_vis2.png';
+        }
+    });
 </script>
+</body>
 </body>
 </html>
