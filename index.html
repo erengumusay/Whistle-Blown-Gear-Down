@@ -76,7 +76,16 @@
             </div>
         <img src="visuals/vis2.png" alt="Second Visual">
 <p>Placeholder text for explaining the second visual in detail and providing context.</p>
-</section>
+<p>
+    Select a team to view its visualization:<br>
+    <select id="teamSelector">
+        <option value="">--Choose a team--</option>
+        <option value="Beşiktaş">Beşiktaş</option>
+        <option value="Fenerbahçe">Fenerbahçe</option>
+        <option value="Galatasaray">Galatasaray</option>
+    </select>
+</p>
+<img id="teamImage" src="visuals/bjk_vis2.png" alt="Visualization" style="margin-top: 20px;">
 <script>
 const selector = document.getElementById('teamSelector');
 const imgElement = document.getElementById('teamImage');
