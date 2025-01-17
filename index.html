@@ -3,34 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İstanbul Trafik Analizi</title>
+    <title>Whistle Blown, Gear Down</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FF0000; /* Açık turkuaz */
+        }
+        h1, h2, h3, p, a {
+            font-family: 'Montserrat', sans-serif;
+        }
+        nav {
+            background-color: #FF0000; /* Turkuaz */
+        }
+        nav a {
+            color: #FF0000; /* Açık turkuaz */
+        }
+        nav a:hover {
+            color: #FF0000; /* Koyu mavi */
+        }
+        footer {
+            background-color: #FF0000; /* Koyu turkuaz */
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>İstanbul Trafik Analizi</h1>
-        <p>Bu proje, İstanbul'daki üç büyük takımın maçlarından sonra trafiğin toparlanma süresini analiz etmektedir.</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#visualizations">Görselleştirmeler</a></li>
-            <li><a href="#data">Veri</a></li>
-            <li><a href="#contact">İletişim</a></li>
-        </ul>
+<body class="leading-normal tracking-normal">
+    <nav class="text-white py-4">
+        <div class="container mx-auto px-4 flex justify-center">
+            
+        </div>
     </nav>
-    <main>
-        <section id="visualizations">
-            <h2>Görselleştirmeler</h2>
-            <p>Proje kapsamında yapılan görselleştirmeler burada yer alacaktır.</p>
-            <!-- Görseller buraya eklenecek -->
+    <div class="container mx-auto px-4 py-12">
+        <header class="text-center mb-12">
+            <div class="relative mb-8">
+                <img src="visuals/theme.webp" alt="Vodafone Park and Traffic">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                    <h1 class="text-5xl font-bold text-white text-center px-4">Whistle Blown, Gear Down</h1>
+                </div>
+            </div>
+            <h2 class="text-4xl font-semibold text-teal-700 mb-6 animate-fade-in">The Impact of Istanbul's Big Three's Matches on Traffic</h2>
+        </header>
+        <section class="bg-white p-8 rounded-lg shadow-md animate-fade-in">
+            <h3 class="text-2xl font-semibold text-teal-700 mb-6">Introduction</h3>
+            <div class="text-gray-700 space-y-4">
+                <p>Introduction content goes here.</p>
+                <p>Additional placeholder text for project details.</p>
+            </div>
         </section>
-        <section id="data">
-            <h2>Veri</h2>
-            <p>Veri kümesi ve açıklamaları burada yer alacaktır.</p>
-            <!-- Veri ile ilgili bilgiler buraya eklenecek -->
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 İstanbul Trafik Analizi Projesi</p>
+    </div>
+    <footer class="text-white py-6 text-center mt-12">
+        <p>&copy; 2025 My Project. All rights reserved.</p>
     </footer>
 </body>
 </html>
