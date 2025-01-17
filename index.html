@@ -120,7 +120,11 @@ National Holidays: Another binary variable to mark national holidays.<br><br>(is
 Model formulas area as follows for each team.<br><br>
 Beşiktas: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.
 Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.
-Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.</p>
+Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.<br><br><div style="text-align: center; margin-top: 20px;">
+        <img src="visuals/table.png" alt="Performance Metrics Table">
+    </div>
+
+</p>
         <script>
             document.getElementById('teamPredictionSelector').addEventListener('change', function() {
                 var teamImage = document.getElementById('teamPredictionImage');
@@ -135,17 +139,4 @@ Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holid
                     teamImage.src = "visuals/regressionbjk.png";
                 }
             });
-        </script>
-    </div>
-</section>
 
-
-    <div style="text-align: center;">
-        <img src="visuals/table.png" alt="Performance Metrics Table">
-        <div style="text-align: center; margin-top: 20px;">
-        <img src="visuals/table.png" alt="Performance Metrics Table">
-        <p style="margin-top: 10px;">This table summarizes the R-squared and Mean Squared Error values for the models of Beşiktaş, Fenerbahçe, and Galatasaray.</p>
-    </div>
-
-</body>
-</html>
