@@ -101,5 +101,35 @@
             <p style="margin-top: 10px;">The last visual shows that there is relatively more overall traffic density during the day at derby days compared to non-derby match days. The insights gleaned here complement the previous visuals and provide a clearer picture of how traffic fluctuates in response to major events.</p>
         </div>
     </section>
+<section class="bg-white p-8 rounded-lg shadow-md animate-fade-in">
+    <h3 class="text-2xl font-semibold text-teal-700 mb-6">Predictive Model</h3>
+    <div style="margin-top: 20px;">
+        <img id="teamPredictionImage" src="visuals/regressionbjk.png" alt="Regression Visualization" style="margin-top: 20px;">
+        <p>Select a team to view its regression visualization:</p>
+        <select id="teamPredictionSelector">
+            <option value="">--Choose a team--</option>
+            <option value="Beşiktaş">Beşiktaş</option>
+            <option value="Fenerbahçe">Fenerbahçe</option>
+            <option value="Galatasaray">Galatasaray</option>
+        </select>
+        <p style="margin-top: 10px;">Visuals above show the regression models comparing predicted and real traffic densities for match days of Beşiktaş, Fenerbahçe, and Galatasaray. Choose a team from the dropdown to view their specific data.</p>
+        <script>
+            document.getElementById('teamPredictionSelector').addEventListener('change', function() {
+                var teamImage = document.getElementById('teamPredictionImage');
+                var selectedTeam = this.value;
+                if (selectedTeam === "Beşiktaş") {
+                    teamImage.src = "visuals/regressionbjk.png";
+                } else if (selectedTeam === "Fenerbahçe") {
+                    teamImage.src = "visuals/regressionfb.png";
+                } else if (selectedTeam === "Galatasaray") {
+                    teamImage.src = "visuals/regressiongs.png";
+                } else {
+                    teamImage.src = "visuals/regressionbjk.png";
+                }
+            });
+        </script>
+    </div>
+</section>
+
 </body>
 </html>
