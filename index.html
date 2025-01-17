@@ -77,5 +77,20 @@
         <img src="visuals/vis2.png" alt="Second Visual">
 <p>Placeholder text for explaining the second visual in detail and providing context.</p>
 </section>
+<script>
+const selector = document.getElementById('teamSelector');
+const imgElement = document.getElementById('teamImage');
+
+selector.addEventListener('change', () => {
+    const team = selector.value;
+    if (team === 'Beşiktaş') {
+        imgElement.src = 'visuals/bjk_vis2.png';
+    } else if (team === 'Fenerbahçe') {
+        imgElement.src = 'visuals/fb_vis2.png';
+    } else if (team === 'Galatasaray') {
+        imgElement.src = 'visuals/gs_vis2.png';
+    }
+});
+</script>
 </body>
 </html>
