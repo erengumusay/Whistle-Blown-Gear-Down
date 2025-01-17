@@ -94,7 +94,6 @@
                         teamImage.src = "visuals/bjk_vis2.png";
                     }
                 });
-};
 </script>
         </div>
         <div style="margin-top: 20px;">
@@ -128,8 +127,7 @@ Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holid
 
 </p>
         <script>
-window.onload = function() {
-    document.getElementById('teamPredictionSelector').addEventListener('change', function() {
+document.getElementById('teamPredictionSelector').addEventListener('change', function() {
                 var teamImage = document.getElementById('teamPredictionImage');
                 var selectedTeam = this.value;
                 if (selectedTeam === "Beşiktaş") {
