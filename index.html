@@ -80,6 +80,21 @@
                 <option value="Galatasaray">Galatasaray</option>
             </select>
             <p style="margin-top: 10px;">Visual above shows the differentiating behaviours focusing on the hours related to match times for each team. Its main purpose is to reveal anomalies on match days, not to compare overall traffic density. Following the match hours, there is a positive divergence in traffic density compared to non-match days.</p>
+            <script>
+                document.getElementById('teamSelector').addEventListener('change', function() {
+                    var teamImage = document.getElementById('teamImage');
+                    var selectedTeam = this.value;
+                    if (selectedTeam === "Beşiktaş") {
+                        teamImage.src = "visuals/bjk_vis2.png";
+                    } else if (selectedTeam === "Fenerbahçe") {
+                        teamImage.src = "visuals/fb_vis2.png";
+                    } else if (selectedTeam === "Galatasaray") {
+                        teamImage.src = "visuals/gs_vis2.png";
+                    } else {
+                        teamImage.src = "visuals/bjk_vis2.png";
+                    }
+                });
+</script>
         </div>
         <div style="margin-top: 20px;">
             <img src="visuals/vis3.png" alt="Visualization 3">
@@ -97,36 +112,6 @@
             <option value="Fenerbahçe">Fenerbahçe</option>
             <option value="Galatasaray">Galatasaray</option>
         </select>
-        <script>
-            document.getElementById('teamPredictionSelector').addEventListener('change', function() {
-                var teamImage = document.getElementById('teamPredictionImage');
-                var selectedTeam = this.value;
-                if (selectedTeam === "Beşiktaş") {
-                    teamImage.src = "visuals/regressionbjk.png";
-                } else if (selectedTeam === "Fenerbahçe") {
-                    teamImage.src = "visuals/regressionfb.png";
-                } else if (selectedTeam === "Galatasaray") {
-                    teamImage.src = "visuals/regressiongs.png";
-                } else {
-                    teamImage.src = "visuals/regressionbjk.png";
-                }
-            });
-                <script>
-document.getElementById('teamPredictionSelector').addEventListener('change', function() {
-                var teamImage = document.getElementById('teamPredictionImage');
-                var selectedTeam = this.value;
-                if (selectedTeam === "Beşiktaş") {
-                    teamImage.src = "visuals/regressionbjk.png";
-                } else if (selectedTeam === "Fenerbahçe") {
-                    teamImage.src = "visuals/regressionfb.png";
-                } else if (selectedTeam === "Galatasaray") {
-                    teamImage.src = "visuals/regressiongs.png";
-                } else {
-                    teamImage.src = "visuals/regressionbjk.png";
-                }
-            });
-
-
         <p style="margin-top: 10px;">There is a different model for each team to predict the 'Average daily traffic density on match days'.<br><br>This is because the datasets are not the same and the analyzed area is different, although the structure of the models is the same, they need different constants and coefficients. Regression model is chosen because the target variable, traffic density, is continuous. It provides precise numerical predictions, unlike classification, which categorizes data into predefined groups and is more suitable for binary or multi-class outcomes rather than continuous variables like traffic density.<br><br>A regression formula containing 5 variables is used, which are:
 <br><br>Match Time Effect: This is a derived feature that adjusts the influence of match start times on traffic density. It is calculated by measuring how far the match time deviates from 22 PM which is the latest match starting time. Matches closer to afternoon are expected to have a more significant traffic impact, while late-night matches may reduce this effect. This feature improves the model's ability to capture time-specific traffic patterns.<br><br>(match_time_effect)
 Derby Status: A binary variable defining if the match is a derby or not.<br><br>(is_derby)
@@ -136,8 +121,24 @@ Model formulas area as follows for each team.<br><br>
 Beşiktas: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.<br>
 Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.<br>
 Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.<br><br><br><div style="text-align: center; margin-top: 20px;">
+          <script>
+              document.getElementById('teamPredictionSelector').addEventListener('change', function() {
+                var teamImage = document.getElementById('teamPredictionImage');
+                var selectedTeam = this.value;
+                if (selectedTeam === "Beşiktaş") {
+                    teamImage.src = "visuals/regressionbjk.png";
+                } else if (selectedTeam === "Fenerbahçe") {
+                    teamImage.src = "visuals/regressionfb.png";
+                } else if (selectedTeam === "Galatasaray") {
+                    teamImage.src = "visuals/regressiongs.png";
+                } else {
+                    teamImage.src = "visuals/regressionbjk.png";
+                }
+            });
+
         <img src="visuals/table.png">
     </div>
     <p style="margin-top: 10px;">The performance metrics indicate that the models for Fenerbahçe and Galatasaray perform strongly, with R-squared values of 0.88 and 0.90, respectively, showing that they explain a significant portion of the variance in traffic density. Their low Mean Squared Error values (0.0139 for Fenerbahçe and 0.0449 for Galatasaray) reflect minimal prediction errors. In contrast, Beşiktaş's model has a lower R-squared value of 0.42, suggesting it explains less variance in traffic density, and a higher MSE of 0.0487, indicating room for improvement. Bigger scaled research with more variables and larger datasets may be needed for improvement for all models.</p>
 
 </p>
+
