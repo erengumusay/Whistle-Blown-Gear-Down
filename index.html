@@ -98,7 +98,7 @@
         </div>
         <div style="margin-top: 20px;">
             <img src="visuals/vis3.png" alt="Visualization 3">
-            <p style="margin-top: 10px;">The last visual shows that there is relatively more overall traffic density during the day at derby days compared to non-derby match days.</p>
+            <p style="margin-top: 10px;">The last visual shows that there is relatively more overall traffic density during the day at derby days compared to non-derby match days. The insights gleaned here complement the previous visuals and provide a clearer picture of how traffic fluctuates in response to major events.</p>
         </div>
     </section>
 <section class="bg-white p-8 rounded-lg shadow-md animate-fade-in">
@@ -112,7 +112,16 @@
             <option value="Fenerbahçe">Fenerbahçe</option>
             <option value="Galatasaray">Galatasaray</option>
         </select>
-        <p style="margin-top: 10px;">Visuals above show the regression models comparing predicted and real traffic densities for match days of Beşiktaş, Fenerbahçe, and Galatasaray. Choose a team from the dropdown to view their specific data.</p>
+        <p style="margin-top: 10px;">There is a different model for each team to predict the 'Average daily traffic density on match days'. This is because the datasets are not the same and the analyzed area is different, although the structure of the models is the same, they need different constants and coefficients. Regression model is chosen because the target variable, traffic density, is continuous. It provides precise numerical predictions, unlike classification, which categorizes data into predefined groups and is more suitable for binary or multi-class outcomes rather than continuous variables like traffic density.
+A regression formula containing 5 variables is used, which are:
+Match Time Effect: This is a derived feature that adjusts the influence of match start times on traffic density. It is calculated by measuring how far the match time deviates from 22 PM which is the latest match starting time. Matches closer to afternoon are expected to have a more significant traffic impact, while late-night matches may reduce this effect. This feature improves the model's ability to capture time-specific traffic patterns.(match_time_effect)
+Derby Status: A binary variable defining if the match is a derby or not.(is_derby)
+Day Type: Another binary variable indicating if the match is on a weekend or a weekday.(is_weekend, is_weekday)
+National Holidays: Another binary variable to mark national holidays.(is_national_holiday)
+Model formulas area as follows for each team.
+Beşiktas: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.
+Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.
+Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.</p>
         <script>
             document.getElementById('teamPredictionSelector').addEventListener('change', function() {
                 var teamImage = document.getElementById('teamPredictionImage');
