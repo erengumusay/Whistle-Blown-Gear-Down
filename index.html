@@ -118,11 +118,12 @@ Derby Status: A binary variable defining if the match is a derby or not.<br><br>
 Day Type: Another binary variable indicating if the match is on a weekend or a weekday.<br><br>(is_weekend, is_weekday)
 National Holidays: Another binary variable to mark national holidays.<br><br>(is_national_holiday)
 Model formulas area as follows for each team.<br><br>
-Beşiktas: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.
-Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.
-Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.<br><br><div style="text-align: center; margin-top: 20px;">
+Beşiktas: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.<br>
+Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.<br>
+Galatasaray: y = 4.5 - is_weekend * 0.47 + is_weekday * 0.57 - is_national_holiday * 0.9 + is_derby * 0.05 + match_time_effect.<br><br><br><div style="text-align: center; margin-top: 20px;">
         <img src="visuals/table.png">
     </div>
+    <p style="margin-top: 10px;">The performance metrics indicate that the models for Fenerbahçe and Galatasaray perform strongly, with R-squared values of 0.88 and 0.90, respectively, showing that they explain a significant portion of the variance in traffic density. Their low Mean Squared Error values (0.0139 for Fenerbahçe and 0.0449 for Galatasaray) reflect minimal prediction errors. In contrast, Beşiktaş's model has a lower R-squared value of 0.42, suggesting it explains less variance in traffic density, and a higher MSE of 0.0487, indicating room for improvement. Bigger scaled research with more variables and larger datasets may be needed for improvement for all models.</p>
 
 </p>
         <script>
