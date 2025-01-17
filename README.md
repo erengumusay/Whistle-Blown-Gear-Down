@@ -1,6 +1,6 @@
 
 Research Question and Aim
-Research Question: How do football matches hosted by Beşiktaş, Fenerbahçe, and Galatasaray impact Istanbul’s traffic density, and what trends emerge from the analysis of match days versus non-match days?
+ How do football matches hosted by Beşiktaş, Fenerbahçe, and Galatasaray impact Istanbul’s traffic density, and what trends emerge from the analysis of match days versus non-match days?
 Aim: The purpose of this research is to evaluate traffic density around the stadiums of Istanbul's three major football teams on match days.
 
 Methodology and Approach
