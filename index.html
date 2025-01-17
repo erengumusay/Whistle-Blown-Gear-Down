@@ -99,10 +99,10 @@
         </select>
     </div>
     <p style="margin-top: 10px;">There is a different model for each team to predict the 'Average daily traffic density on match days'.<br><br>This is because the datasets are not the same and the analyzed area is different, although the structure of the models is the same, they need different constants and coefficients. Regression model is chosen because the target variable, traffic density, is continuous. It provides precise numerical predictions, unlike classification, which categorizes data into predefined groups and is more suitable for binary or multi-class outcomes rather than continuous variables like traffic density.<br><br>A regression formula containing 5 variables is used, which are:
-<br><br>Match Time Effect: This is a derived feature that adjusts the influence of match start times on traffic density. It is calculated by measuring how far the match time deviates from 22 PM which is the latest match starting time. Matches closer to afternoon are expected to have a more significant traffic impact, while late-night matches may reduce this effect. This feature improves the model's ability to capture time-specific traffic patterns.<br><br>(match_time_effect)
-Derby Status: A binary variable defining if the match is a derby or not.<br><br>(is_derby)
-Day Type: Another binary variable indicating if the match is on a weekend or a weekday.<br><br>(is_weekend, is_weekday)
-National Holidays: Another binary variable to mark national holidays.<br><br>(is_national_holiday)
+<br><br>Match Time Effect: This is a derived feature that adjusts the influence of match start times on traffic density. It is calculated by measuring how far the match time deviates from 22 PM which is the latest match starting time. Matches closer to afternoon are expected to have a more significant traffic impact, while late-night matches may reduce this effect. This feature improves the model's ability to capture time-specific traffic patterns.(match_time_effect)<br><br>
+Derby Status: A binary variable defining if the match is a derby or not.(is_derby)<br><br>
+Day Type: Another binary variable indicating if the match is on a weekend or a weekday.(is_weekend, is_weekday)<br><br>
+National Holidays: Another binary variable to mark national holidays.(is_national_holiday)<br><br>
 Model formulas area as follows for each team.<br><br>
 Beşiktaş: y = 3.84 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.2 + match_time_effect.<br>
 Fenerbahçe: y = 2.9 - is_weekend * 0.67 + is_weekday * 0.27 - is_national_holiday * 0.9 + is_derby * 0.4 + match_time_effect.<br>
